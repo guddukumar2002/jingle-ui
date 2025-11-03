@@ -1,17 +1,15 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Packages from './components/Packages';
-import Footer from './components/Footer';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Landing from "./pages/landing";
+import PageNotFound from "./components/PageNotFound";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Packages />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
-}
+};
 
 export default App;
